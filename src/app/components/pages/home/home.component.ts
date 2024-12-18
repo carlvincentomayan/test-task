@@ -15,6 +15,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 import { cloneDeep } from 'lodash';
+import {MatBadgeModule} from '@angular/material/badge';
 export interface Element {
   firstname: string;
   lastname: string;
@@ -36,7 +37,8 @@ export interface Element {
     InputComponent,
     MatCheckboxModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatBadgeModule
 
   ],
   templateUrl: './home.component.html',
