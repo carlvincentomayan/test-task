@@ -39,7 +39,6 @@ export interface Element {
     ReactiveFormsModule,
     FormsModule,
     MatBadgeModule
-
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
