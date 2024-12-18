@@ -14,6 +14,8 @@ import { CommonModule } from '@angular/common';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { TaskService } from '../../../../services/task.service';
+import {MatSnackBarModule,MatSnackBar} from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-new-task-form',
   standalone: true,
@@ -29,7 +31,8 @@ import { TaskService } from '../../../../services/task.service';
     MatInputModule,
     MatCheckboxModule,
     CommonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSnackBarModule
     
   ],
   providers:[
@@ -43,7 +46,7 @@ import { TaskService } from '../../../../services/task.service';
 })
 export class NewTaskFormComponent {
   form: FormGroup;
-  constructor( private fb: FormBuilder, 
+  constructor( private fb: FormBuilder, private snackBar: MatSnackBar,
      public dialogRef: MatDialogRef<NewTaskFormComponent>,
      private taskService : TaskService,
      private router: Router){
@@ -59,8 +62,17 @@ export class NewTaskFormComponent {
   
   onSave(): void {
     this.taskService.appendToArray('taskActions', JSON.stringify(this.form.value));
-    this.redirectToMainPage();
-    this.form.reset();
+    this.snackBar.open('SuccessFully Saved...','',{
+      duration: 3000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top', 
+      panelClass: ['success-snackbar']
+    });  
+    setTimeout(() => {
+      this.redirectToMainPage();
+      this.form.reset();
+    }, 1000);
+    
   }
   onchange() {
     console.log(this.form);

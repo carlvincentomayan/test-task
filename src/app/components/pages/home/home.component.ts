@@ -26,7 +26,6 @@ export interface Element {
   selector: 'app-home',
   standalone: true,
   imports: [
-    NewTaskFormComponent,
     MatTableModule,
     MatFormFieldModule ,
     MatButtonModule,

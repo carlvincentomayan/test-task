@@ -3,11 +3,13 @@
 .example-container {
     display: flex;
     flex-direction: column;
+    padding: 20px;
+    background: #e0e0e0;
+    border: 1px solid #ddd;
+    width: 50%;
+    margin: 5rem 30rem 30rem 30rem;
   }
   
-  .example-container > * {
-    width: 100%;
-  }
   .custom-dialog-actions {
     padding: 20px; /* Customize padding as needed */
   }
@@ -15,4 +17,9 @@
 
   ::ng-deep .mat-button {
     padding: 16px 24px;  /* Adjust the padding as needed */
+  }
+
+  .success-snackbar {
+    background-color: #4caf50; /* Green for success */
+    color: white; /* Text color */
   }

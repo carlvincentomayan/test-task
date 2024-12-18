@@ -6,11 +6,11 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title>Detail Task Info : {{data.id}}</mat-card-title>
-        <mat-card-subtitle style="text-transform: uppercase;font-size: x-large;"><p><strong>Name:</strong> {{data.lastName}}, {{data.firstName}}</p>  </mat-card-subtitle>
+        <mat-card-subtitle style="text-transform: uppercase;font-size: large;"><p><strong>Name:</strong> {{data.lastName}}, {{data.firstName}}</p>  </mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
         <p><strong>Task:</strong>{{data.task}} </p>
-        <p><strong>Completed:</strong> {{data.didagree.value}}</p>
+        <p><strong>Completed:</strong> <label style="text-transform: uppercase;">{{data.didagree.value}}</label></p>
       </mat-card-content>
       <mat-card-actions>
         <button mat-raised-button  [routerLink]="['/']" color="primary">Close</button>
