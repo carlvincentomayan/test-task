@@ -1,0 +1,57 @@
+.center-content {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  // align-items: center; 
+  // text-align: center; 
+}
+
+.example-container {
+  width: 100%;
+  margin-top: 20px; /* Space between toolbar and table */
+}
+
+mat-toolbar {
+  margin-bottom: 20px; /* Space below the toolbar */
+}
+
+mat-table {
+  width: 100%; 
+}
+
+
+.mat-header-row {
+  background-color: #3f51b5;
+}
+
+.mat-header-cell, .mat-mdc-header-row {
+  color: white; 
+  font-weight: bold; 
+  background-color: rgb(102, 106, 106);
+}
+
+
+
+.mat-column-didagree ,.mat-column-id {
+  width: 10px;
+  max-width: 150px;
+  word-wrap: break-word;
+}
+
+.mat-column-firstName {
+  width: 150px;
+  max-width: 150px;
+  word-wrap: break-word;
+}
+
+
+.mat-column-lastName {
+  width: 150px;
+  max-width: 150px;
+  word-wrap: break-word;
+}
+
+
+.checked-row {
+  background-color: #f1f1f1;
+}

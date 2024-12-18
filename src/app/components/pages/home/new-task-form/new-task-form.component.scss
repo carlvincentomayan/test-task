@@ -1,0 +1,18 @@
+
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  .custom-dialog-actions {
+    padding: 20px; /* Customize padding as needed */
+  }
+
+
+  ::ng-deep .mat-button {
+    padding: 16px 24px;  /* Adjust the padding as needed */
+  }

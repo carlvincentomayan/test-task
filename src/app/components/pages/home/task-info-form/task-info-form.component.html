@@ -1,0 +1,19 @@
+<mat-toolbar color="secondary">
+    <button mat-raised-button color="accent" [routerLink]="['/']">Back</button>
+  </mat-toolbar>
+  
+  <div class="info-display">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Detail Task Info : {{data.id}}</mat-card-title>
+        <mat-card-subtitle style="text-transform: uppercase;font-size: x-large;"><p><strong>Name:</strong> {{data.lastName}}, {{data.firstName}}</p>  </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p><strong>Task:</strong>{{data.task}} </p>
+        <p><strong>Completed:</strong> {{data.didagree.value}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button  [routerLink]="['/']" color="primary">Close</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>

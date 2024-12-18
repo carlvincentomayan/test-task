@@ -1,0 +1,8 @@
+<form [formGroup]="form">
+  
+    <app-input formControlName="agreeToTerms">
+      I agree to the terms and conditions
+    </app-input>
+  
+  </form>
+  <p>Form Value: {{ form.value | json }}</p>

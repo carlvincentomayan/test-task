@@ -1,0 +1,62 @@
+<mat-toolbar></mat-toolbar>
+<div class="center-content">
+  <h3 style="text-transform: uppercase;color: rgb(182, 174, 174);">Task management app</h3>
+  <div class="example-container mat-elevation-z8">
+    <button mat-raised-button color="primary" [routerLink]="['/newtask']" style="float: right;
+    position: revert-layer;
+    margin-top: -2.5rem;
+">Add</button>
+    <div>
+      <table mat-table [dataSource]="dataSource">
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let element">
+            <a [routerLink]="['/task', element.id]">{{ element.id }}</a>
+          </td>
+        </ng-container>
+
+        <!-- First Name Column -->
+        <ng-container matColumnDef="firstName">
+          <th mat-header-cell *matHeaderCellDef> First Name </th>
+          <td mat-cell *matCellDef="let element">{{ element.firstName }}</td>
+        </ng-container>
+
+        <!-- Last Name Column -->
+        <ng-container matColumnDef="lastName">
+          <th mat-header-cell *matHeaderCellDef> Last Name </th>
+          <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
+        </ng-container>
+
+        <!-- Task Column -->
+        <ng-container matColumnDef="task">
+          <th mat-header-cell *matHeaderCellDef> Task </th>
+          <td mat-cell *matCellDef="let element">{{ element.task }}</td>
+        </ng-container>
+
+
+        <!-- <ng-container matColumnDef="didagree">
+          <th mat-header-cell *matHeaderCellDef> Task </th>
+          <td mat-cell *matCellDef="let element">{{ element.didagree.value }}</td>
+        </ng-container> -->
+
+
+        <!-- Did Agree Column (Editable Checkbox) -->
+        <ng-container matColumnDef="didagree">
+          <th mat-header-cell *matHeaderCellDef> Done </th>
+          <td mat-cell *matCellDef="let row">
+            <app-input [formControl]="row.didagree" (change)="onchange()"></app-input>
+          </td>
+        </ng-container>
+
+        <!-- Header and Row Definitions -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'checked-row': row.didagree.value}">
+        </tr>
+      </table>
+    </div>
+  </div>
+
+
+</div>

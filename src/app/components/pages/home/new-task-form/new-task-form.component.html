@@ -1,0 +1,79 @@
+<!-- <h2>Create a new task</h2>
+<form>
+  <app-input
+    [label]="'New Task'"
+    [id]="'new-task'"
+    [formControl]="form.controls.isRequired"
+  />
+  <app-checkbox />
+</form> -->
+<mat-toolbar color="secondary">
+  <button mat-raised-button color="accent" [routerLink]="['/']">Back</button>
+</mat-toolbar>
+
+
+
+
+<form [formGroup]="form">
+  <div style="    padding: 5rem;" class="example-container">
+
+    <mat-dialog-content>
+      <p><b>New Task Form</b></p>
+    </mat-dialog-content>
+
+    <mat-form-field>
+      <input matInput placeholder="First Name" formControlName="firstName">
+      <mat-error *ngIf="form.get('firstName')?.hasError('required')">
+        First Name must have a value
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Last Name" formControlName="lastName">
+      <mat-error *ngIf="form.get('lastName')?.hasError('required')">
+        Last Name must have a value
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Task Todo" formControlName="task">
+      <mat-error *ngIf="form.get('task')?.hasError('required')">
+        Task must have a value
+      </mat-error>
+    </mat-form-field>
+
+    <div style="display: flex;">
+      <app-input formControlName="didagree" (change)="onchange()"></app-input>
+      <mat-label>Acknowledge</mat-label>
+    </div>
+
+    <!-- <app-input
+        [label]="'New Task'"
+        [id]="'new-task'"
+        formControlName="isrequired"
+      />
+      <app-checkbox /> -->
+
+
+
+    <mat-dialog-actions class="custom-dialog-actions">
+
+      <button mat-raised-button color="primary" (click)="onSave()" [disabled]="!form.valid">Save</button>&nbsp;
+      <button mat-raised-button mat-dialog-close color="primary" [routerLink]="['/']">Close</button>
+    </mat-dialog-actions>
+
+  </div>
+</form>
+<!-- <form [formGroup]="form">
+  <div class="example-container">
+
+
+
+
+    <mat-dialog-actions>
+      <button mat-raised-button mat-dialog-close color="primary">Close</button>
+      <button mat-raised-button color="primary" (click)="onSave()">Save</button>
+    </mat-dialog-actions>
+
+  </div>
+</form> -->

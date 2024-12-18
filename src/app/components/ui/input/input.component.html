@@ -1,0 +1,4 @@
+@if(label()) {
+<label [htmlFor]="id()">{{ label() }}</label>
+}
+<input type="checkbox" [value]="value()" [checked]="value()" (input)="onInput($event)" [id]="id()" />
